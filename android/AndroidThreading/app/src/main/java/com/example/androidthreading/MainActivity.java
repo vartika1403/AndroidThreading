@@ -20,16 +20,16 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-     //   ButterKnife.bind(this);
+        ButterKnife.bind(this);
         looperThread =new LooperThread();
         looperThread.start();
     }
 
-  /*  @OnClick(R.id.button)
+   @OnClick(R.id.button)
     public void onClick() {
            Message msg = looperThread.handler.obtainMessage();
            looperThread.handler.sendMessage(msg);
-    }*/
+    }
 
     private static class LooperThread extends Thread {
         public Handler handler;
