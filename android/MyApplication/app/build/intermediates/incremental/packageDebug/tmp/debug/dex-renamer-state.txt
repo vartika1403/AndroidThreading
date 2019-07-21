@@ -1,0 +1,4 @@
+#Sat Jul 20 19:00:04 IST 2019
+base.0=/Users/vartikasharma/AndroidStudioProjects/android/MyApplication/app/build/intermediates/dex/debug/mergeDexDebug/out
+path.0=classes.dex
+renamed.0=classes.dex
