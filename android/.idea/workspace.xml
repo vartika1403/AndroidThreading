@@ -12,80 +12,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="848bc4ee-642e-4362-b04c-5fdf563fda58" name="Default Changelist" comment="added impression tracking class to track time and percentage">
-      <change afterPath="$PROJECT_DIR$/../AndroidMuthreading/.idea/gradle.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../AndroidMuthreading/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../MyApplication2/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../MyApplication2/.idea/runConfigurations.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../MyApplication2/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../MyApplication2/app/proguard-rules.pro" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../MyApplication2/app/src/main/java/com/example/myapplication/MainActivity.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../MyApplication2/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../MyApplication2/app/src/main/res/drawable/ic_launcher_background.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../MyApplication2/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../MyApplication2/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../MyApplication2/app/src/main/res/mipmap-hdpi/ic_launcher.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../MyApplication2/app/src/main/res/mipmap-hdpi/ic_launcher_round.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../MyApplication2/app/src/main/res/mipmap-mdpi/ic_launcher.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../MyApplication2/app/src/main/res/mipmap-mdpi/ic_launcher_round.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../MyApplication2/app/src/main/res/mipmap-xhdpi/ic_launcher.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../MyApplication2/app/src/main/res/mipmap-xhdpi/ic_launcher_round.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../MyApplication2/app/src/main/res/mipmap-xxhdpi/ic_launcher.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../MyApplication2/app/src/main/res/mipmap-xxhdpi/ic_launcher_round.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../MyApplication2/app/src/main/res/mipmap-xxxhdpi/ic_launcher.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../MyApplication2/app/src/main/res/mipmap-xxxhdpi/ic_launcher_round.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../MyApplication2/app/src/main/res/values/strings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../MyApplication2/app/src/main/res/values/styles.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../MyApplication2/gradlew.bat" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../MyApplication2/settings.gradle" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../VisibiltyMeasurement/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../VisibiltyMeasurement/.idea/encodings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../VisibiltyMeasurement/.idea/gradle.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../VisibiltyMeasurement/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../VisibiltyMeasurement/.idea/runConfigurations.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../VisibiltyMeasurement/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../VisibiltyMeasurement/app/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../VisibiltyMeasurement/app/build.gradle" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../VisibiltyMeasurement/app/proguard-rules.pro" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../VisibiltyMeasurement/app/src/androidTest/java/com/example/visibiltymeasurement/ExampleInstrumentedTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../VisibiltyMeasurement/app/src/main/AndroidManifest.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../VisibiltyMeasurement/app/src/main/java/com/example/visibiltymeasurement/MainActivity.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../VisibiltyMeasurement/app/src/main/java/com/example/visibiltymeasurement/VisibilityTracker.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../VisibiltyMeasurement/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../VisibiltyMeasurement/app/src/main/res/drawable/ic_launcher_background.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../VisibiltyMeasurement/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../VisibiltyMeasurement/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../VisibiltyMeasurement/app/src/main/res/mipmap-hdpi/ic_launcher.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../VisibiltyMeasurement/app/src/main/res/mipmap-hdpi/ic_launcher_round.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../VisibiltyMeasurement/app/src/main/res/mipmap-mdpi/ic_launcher.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../VisibiltyMeasurement/app/src/main/res/mipmap-mdpi/ic_launcher_round.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../VisibiltyMeasurement/app/src/main/res/mipmap-xhdpi/ic_launcher.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../VisibiltyMeasurement/app/src/main/res/mipmap-xhdpi/ic_launcher_round.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../VisibiltyMeasurement/app/src/main/res/mipmap-xxhdpi/ic_launcher.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../VisibiltyMeasurement/app/src/main/res/mipmap-xxhdpi/ic_launcher_round.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../VisibiltyMeasurement/app/src/main/res/mipmap-xxxhdpi/ic_launcher.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../VisibiltyMeasurement/app/src/main/res/mipmap-xxxhdpi/ic_launcher_round.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../VisibiltyMeasurement/app/src/main/res/values/colors.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../VisibiltyMeasurement/app/src/main/res/values/strings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../VisibiltyMeasurement/app/src/main/res/values/styles.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../VisibiltyMeasurement/app/src/test/java/com/example/visibiltymeasurement/ExampleUnitTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../VisibiltyMeasurement/build.gradle" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../VisibiltyMeasurement/gradle.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../VisibiltyMeasurement/gradle/wrapper/gradle-wrapper.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../VisibiltyMeasurement/gradle/wrapper/gradle-wrapper.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../VisibiltyMeasurement/gradlew" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../VisibiltyMeasurement/gradlew.bat" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../VisibiltyMeasurement/settings.gradle" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../VisiblityMeasurement/.idea/codeStyles/Project.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../VisiblityMeasurement/.idea/codeStyles/codeStyleConfig.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../VisiblityMeasurement/.idea/gradle.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../VisiblityMeasurement/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/androidSlidingPanelLibrary/androidSlidingPanelLibrary.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/initActivity/.idea/encodings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/initActivity/.idea/initActivity.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/initActivity/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/initActivity/initActivity.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/library/library.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AndroidThreading/app/src/main/java/com/example/androidthreading/MainActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/AndroidThreading/app/src/main/java/com/example/androidthreading/MainActivity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/android" beforeDir="false" afterPath="$PROJECT_DIR$/android" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -210,7 +138,7 @@
     <favorites_list name="android" />
   </component>
   <component name="FileEditorManager">
-    <leaf>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/initActivity/initActivity.iml">
           <provider selected="true" editor-type-id="text-editor" />
@@ -340,13 +268,104 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
             <path>
               <item name="android" type="b2602c69:ProjectViewProjectNode" />
               <item name="android" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="android" type="b2602c69:ProjectViewProjectNode" />
+              <item name="android" type="462c0819:PsiDirectoryNode" />
+              <item name="android" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="android" type="b2602c69:ProjectViewProjectNode" />
+              <item name="android" type="462c0819:PsiDirectoryNode" />
+              <item name="android" type="462c0819:PsiDirectoryNode" />
+              <item name="androidSlidingPanelLibrary" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="android" type="b2602c69:ProjectViewProjectNode" />
+              <item name="android" type="462c0819:PsiDirectoryNode" />
+              <item name="android" type="462c0819:PsiDirectoryNode" />
+              <item name="initActivity" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="android" type="b2602c69:ProjectViewProjectNode" />
+              <item name="android" type="462c0819:PsiDirectoryNode" />
+              <item name="android" type="462c0819:PsiDirectoryNode" />
+              <item name="library" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="android" type="b2602c69:ProjectViewProjectNode" />
+              <item name="android" type="462c0819:PsiDirectoryNode" />
+              <item name="AndroidThreading" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="android" type="b2602c69:ProjectViewProjectNode" />
+              <item name="android" type="462c0819:PsiDirectoryNode" />
+              <item name="AndroidThreading" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="android" type="b2602c69:ProjectViewProjectNode" />
+              <item name="android" type="462c0819:PsiDirectoryNode" />
+              <item name="AndroidThreading" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="android" type="b2602c69:ProjectViewProjectNode" />
+              <item name="android" type="462c0819:PsiDirectoryNode" />
+              <item name="AndroidThreading" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="android" type="b2602c69:ProjectViewProjectNode" />
+              <item name="android" type="462c0819:PsiDirectoryNode" />
+              <item name="AndroidThreading" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="android" type="b2602c69:ProjectViewProjectNode" />
+              <item name="android" type="462c0819:PsiDirectoryNode" />
+              <item name="AndroidThreading" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="com" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="android" type="b2602c69:ProjectViewProjectNode" />
+              <item name="android" type="462c0819:PsiDirectoryNode" />
+              <item name="AndroidThreading" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="com" type="462c0819:PsiDirectoryNode" />
+              <item name="example" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="android" type="b2602c69:ProjectViewProjectNode" />
+              <item name="android" type="462c0819:PsiDirectoryNode" />
+              <item name="AndroidThreading" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="com" type="462c0819:PsiDirectoryNode" />
+              <item name="example" type="462c0819:PsiDirectoryNode" />
+              <item name="androidthreading" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="android" type="b2602c69:ProjectViewProjectNode" />
@@ -362,7 +381,7 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -718,10 +737,9 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
-    <editor active="true" />
     <layout>
       <window_info id="Captures" order="0" sideWeight="0.5021008" side_tool="true" weight="0.3297568" />
-      <window_info content_ui="combo" id="Project" order="1" sideWeight="0.497307" visible="true" weight="0.27202255" />
+      <window_info active="true" content_ui="combo" id="Project" order="1" sideWeight="0.497307" visible="true" weight="0.27202255" />
       <window_info id="Structure" order="2" sideWeight="0.50120485" side_tool="true" weight="0.3297568" />
       <window_info id="Favorites" order="3" sideWeight="0.502693" side_tool="true" weight="0.3297568" />
       <window_info id="Build Variants" order="4" side_tool="true" />
@@ -732,7 +750,7 @@
       <window_info anchor="bottom" id="Run" order="0" weight="0.32891566" />
       <window_info anchor="bottom" id="TODO" order="1" weight="0.32891566" />
       <window_info anchor="bottom" id="Debug" order="2" weight="0.58554214" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="3" visible="true" weight="0.32891566" />
+      <window_info anchor="bottom" id="Terminal" order="3" visible="true" weight="0.32891566" />
       <window_info anchor="bottom" id="Event Log" order="4" sideWeight="0.50214595" side_tool="true" weight="0.45180723" />
       <window_info anchor="bottom" id="Version Control" order="5" sideWeight="0.49785408" weight="0.45180723" />
       <window_info anchor="bottom" id="Build" order="6" weight="0.44457832" />
@@ -1074,13 +1092,7 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/initActivity/src/main/java/com/jio/media/jiobeats/ClevertapManager.java" />
-    <entry file="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/76c55ac8152161466bb534ad6d63ee89/jars/classes.jar!/com/google/android/gms/analytics/Tracker.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="28" column="13" selection-start-line="28" selection-start-column="13" selection-end-line="28" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/76c55ac8152161466bb534ad6d63ee89/jars/classes.jar!/com/google/android/gms/analytics/Tracker.class" />
     <entry file="file://$PROJECT_DIR$/initActivity/src/main/java/com/jio/media/jiobeats/utils/Utils.java" />
     <entry file="file://$PROJECT_DIR$/initActivity/src/main/java/com/jio/media/jiobeats/UI/SaavnContentObject.java" />
     <entry file="file://$PROJECT_DIR$/initActivity/src/main/java/com/jio/media/jiobeats/VerticalDynFragment.java" />

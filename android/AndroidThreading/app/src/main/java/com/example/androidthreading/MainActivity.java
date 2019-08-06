@@ -5,15 +5,11 @@ import android.os.Handler;
 import android.os.Looper;
 import android.os.Message;
 import android.os.Bundle;
-import android.os.SystemClock;
 import android.util.Log;
 import android.view.View;
-import android.widget.Button;
 import android.widget.ProgressBar;
 
 import androidx.appcompat.app.AppCompatActivity;
-
-import java.util.Random;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -24,7 +20,7 @@ public class MainActivity extends AppCompatActivity {
     private static final String LOG_TAG = MainActivity.class.getSimpleName();
     private static final int SHOW_PROGRESS_BAR = 0;
     private static final int HIDE_PROGRESS_BAR = 1;
-    public static Handler uiHandler;
+    public Handler uiHandler;
     private LooperThread looperThread;
     private BackgroundThread mBackgroundThread;
 
@@ -40,40 +36,22 @@ public class MainActivity extends AppCompatActivity {
         looperThread.start();
 
 
-        uiHandler = new Handler(Looper.getMainLooper()) {
-            public void handlerMessage(Message message) {
-                Log.d(LOG_TAG, "message received");
-                switch (message.what) {
-                    case SHOW_PROGRESS_BAR:
-                        progressBar.setVisibility(View.VISIBLE);
-                        break;
-                    case HIDE_PROGRESS_BAR:
-                        progressBar.setVisibility(View.INVISIBLE);
-                        break;
-                }
-            }
-        };
-        mBackgroundThread = new BackgroundThread();
-        mBackgroundThread.start();
-    }
-
-    @SuppressLint("HandlerLeak")
-    private  void startUiHandler() {
-
     }
 
     @OnClick(R.id.button)
     public void onClick() {
-           Message msg = looperThread.handler.obtainMessage();
+
+        Message msg = looperThread.handler.obtainMessage();
            looperThread.handler.sendMessage(msg);
     }
 
     @OnClick(R.id.start_back_thread)
     public void startBackThread() {
-        mBackgroundThread.doWork();
+        mBackgroundThread = new BackgroundThread();
+        mBackgroundThread.start();
     }
 
-    private static class LooperThread extends Thread {
+    private class LooperThread extends Thread {
         public Handler handler;
 
         @SuppressLint("HandlerLeak")
@@ -84,10 +62,10 @@ public class MainActivity extends AppCompatActivity {
                 public void handleMessage(Message message) {
                     if (message.what == 0) {
                         Log.d(LOG_TAG , "message received, " + message.arg1 + ", " + message.arg2);
-                        if (uiHandler != null) {
-                            Message uiMsg = uiHandler.obtainMessage(0, 0, 0, null);
-                            uiHandler.sendMessage(uiMsg);
-                        }
+                        Message message1 = new Message();
+                        message1.what =HIDE_PROGRESS_BAR;
+                        message1.arg1 = 0;
+                        uiHandler.sendMessage(message1);
                     }
                 }
             };
@@ -96,53 +74,37 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public class BackgroundThread extends Thread {
-        private Handler mBackgroundHandler;
 
         @Override
         public void run() {
-            Looper.prepare();
-            mBackgroundHandler = new Handler() {
 
-                @Override
-                public void handleMessage(Message msg) {
-                    // TODO Auto-generated method stub
+            Message message = new Message();
+            message.what = SHOW_PROGRESS_BAR;
+            message.arg1=0;
+            uiHandler.sendMessage(message);
+        }
+    }
 
-                    if (uiHandler != null) {
-                        Message uiMsg = uiHandler.obtainMessage(0, 0, 0, null);
-                        uiHandler.sendMessage(uiMsg);
-                    }
+    @SuppressLint("HandlerLeak")
+    @Override
+    protected void onResume() {
+        super.onResume();
+        uiHandler = new Handler(){
+            @Override
+            public void handleMessage(Message msg) {
+                super.handleMessage(msg);
+                Log.d(LOG_TAG, "message ui handler, " + msg);
+                if (msg.what == SHOW_PROGRESS_BAR) {
+                    progressBar.setVisibility(View.VISIBLE);
+                } else if (msg.what == HIDE_PROGRESS_BAR) {
+                    progressBar.setVisibility(View.INVISIBLE);
                 }
-
-            };
-
-            Looper.loop();
-        }
-
-        public void doWork() {
-            mBackgroundHandler.post(new Runnable() {
-                @Override
-                public void run() {
-                    Message uiMsg = uiHandler.obtainMessage(0, 0, 0, null);
-                    uiHandler.sendMessage(uiMsg);
-
-                    Random random = new Random();
-                    int randomInt = random.nextInt(5);
-                    SystemClock.sleep(randomInt);
-
-                    uiMsg = uiHandler.obtainMessage(1, randomInt, 0, null);
-                    uiHandler.sendMessage(uiMsg);
-                }
-            });
-        }
-
-        public void exit() {
-            mBackgroundHandler.getLooper().quit();
-        }
+            }
+        };
     }
 
     @Override
     protected void onDestroy() {
-        mBackgroundThread.exit();
         super.onDestroy();
     }
 }
