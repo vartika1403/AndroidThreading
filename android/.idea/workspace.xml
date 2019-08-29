@@ -12,8 +12,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="848bc4ee-642e-4362-b04c-5fdf563fda58" name="Default Changelist" comment="added impression tracking class to track time and percentage">
-      <change beforePath="$PROJECT_DIR$/AndroidThreading/app/src/main/java/com/example/androidthreading/MainActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/AndroidThreading/app/src/main/java/com/example/androidthreading/MainActivity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/android" beforeDir="false" afterPath="$PROJECT_DIR$/android" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AndroidThreading/.idea/render.experimental.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AndroidThreading/app/src/main/res/layout/activity_base.xml" beforeDir="false" afterPath="$PROJECT_DIR$/AndroidThreading/app/src/main/res/layout/activity_base.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/android/android/.idea/caches/build_file_checksums.ser" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/android/android/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/android/android/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -194,6 +197,7 @@
     </dirStrings>
   </component>
   <component name="Git.Settings">
+    <option name="ROOT_SYNC" value="DONT_SYNC" />
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
@@ -392,6 +396,7 @@
     <property name="SHOW_ALL_PROCESSES" value="false" />
     <property name="android.sdk.path" value="$USER_HOME$/Library/Android/sdk" />
     <property name="device.picker.selection" value="896X05WUQ" />
+    <property name="settings.editor.selected.configurable" value="reference.settings.project.gradle.running" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -750,9 +755,9 @@
       <window_info anchor="bottom" id="Run" order="0" weight="0.32891566" />
       <window_info anchor="bottom" id="TODO" order="1" weight="0.32891566" />
       <window_info anchor="bottom" id="Debug" order="2" weight="0.58554214" />
-      <window_info anchor="bottom" id="Terminal" order="3" visible="true" weight="0.32891566" />
+      <window_info anchor="bottom" id="Terminal" order="3" weight="0.32891566" />
       <window_info anchor="bottom" id="Event Log" order="4" sideWeight="0.50214595" side_tool="true" weight="0.45180723" />
-      <window_info anchor="bottom" id="Version Control" order="5" sideWeight="0.49785408" weight="0.45180723" />
+      <window_info anchor="bottom" id="Version Control" order="5" sideWeight="0.49785408" visible="true" weight="0.45180723" />
       <window_info anchor="bottom" id="Build" order="6" weight="0.44457832" />
       <window_info anchor="bottom" id="Android Profiler" order="7" weight="0.32891566" />
       <window_info anchor="bottom" id="Find" order="8" sideWeight="0.49928468" weight="0.6578313" />
