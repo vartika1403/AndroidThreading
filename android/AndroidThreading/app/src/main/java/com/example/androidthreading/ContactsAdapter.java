@@ -38,6 +38,11 @@ public class ContactsAdapter extends ListAdapter<Contact, ContactsAdapter.ViewHo
         this.contacts = contacts;
     }
 
+    public void addMoreContacts(List<Contact> newContacts) {
+        contacts.addAll(newContacts);
+        submitList(contacts); // DiffUtil takes care of the check
+    }
+
     @NonNull
     @Override
     public ContactsAdapter.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
@@ -50,7 +55,7 @@ public class ContactsAdapter extends ListAdapter<Contact, ContactsAdapter.ViewHo
 
     @Override
     public void onBindViewHolder(@NonNull ContactsAdapter.ViewHolder holder, int position) {
-        Contact contact = contacts.get(position);
+        Contact contact = getItem(position);
 
         // Set item views based on your views and data model
         TextView textView = holder.nameTextView;
