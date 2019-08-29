@@ -3,6 +3,7 @@ package com.example.androidthreading;
 import java.util.ArrayList;
 
 public class Contact {
+    private int id;
     private String name;
     private boolean isOnline;
 
@@ -10,7 +11,13 @@ public class Contact {
         this.name = name;
         this.isOnline = isOnline;
     }
+    public int getId() {
+        return id;
+    }
 
+    public void setId(int id) {
+        this.id = id;
+    }
     public String getName() {
         return name;
     }

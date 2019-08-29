@@ -8,14 +8,31 @@ import android.widget.Button;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
+import androidx.recyclerview.widget.DiffUtil;
+import androidx.recyclerview.widget.ListAdapter;
 import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class ContactsAdapter extends RecyclerView.Adapter<ContactsAdapter.ViewHolder> {
+public class ContactsAdapter extends ListAdapter<Contact, ContactsAdapter.ViewHolder> {
     private static final String LOG_TAG = ContactsAdapter.class.getSimpleName();
     List<Contact> contacts = new ArrayList<>();
+    public static final DiffUtil.ItemCallback<Contact> DIFF_CALLBACK =
+            new DiffUtil.ItemCallback<Contact>() {
+                @Override
+                public boolean areItemsTheSame(Contact oldItem, Contact newItem) {
+                    return oldItem.getId() == newItem.getId();
+                }
+                @Override
+                public boolean areContentsTheSame(Contact oldItem, Contact newItem) {
+                    return (oldItem.getName() == newItem.getName() && oldItem.isOnline() == newItem.isOnline());
+                }
+            };
+
+    public ContactsAdapter() {
+        super(DIFF_CALLBACK);
+    }
 
     public ContactsAdapter(List<Contact> contacts) {
         this.contacts = contacts;
