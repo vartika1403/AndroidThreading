@@ -88,4 +88,16 @@ public class ContactsAdapter extends ListAdapter<Contact, ContactsAdapter.ViewHo
             messageButton = (Button) itemView.findViewById(R.id.message_button);
         }
     }
+
+    public void swapItems(List<Contact> contacts) {
+        // compute diffs
+        final ContactDiffCallback diffCallback = new ContactDiffCallback(this.contacts, contacts);
+        final DiffUtil.DiffResult diffResult = DiffUtil.calculateDiff(diffCallback);
+
+        // clear contacts and add
+        this.contacts.clear();
+        this.contacts.addAll(contacts);
+
+        diffResult.dispatchUpdatesTo(this); // calls adapter's notify methods after diff is computed
+    }
 }
