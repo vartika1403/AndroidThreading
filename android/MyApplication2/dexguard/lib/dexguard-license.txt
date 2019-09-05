@@ -1,0 +1,10 @@
+# DexGuard license file
+licensee              = Saavn
+contact               =  
+contactEmail          = ramesh@saavn.com
+product               = DexGuard
+version               = 7.*,8.*
+package               = com.jio.media.jiobeats
+expiryDate            = 2020-03-17
+maintenanceExpiryDate = 2020-03-17
+key                   = 1db859400eb56447914eff899c3f544c3a7a4f3fef82002d2332be7b88ed05691eb23803c57d23bfa7b6a20244dcaf89e7c215d71da0ab6dc35302aaa2dacc9b

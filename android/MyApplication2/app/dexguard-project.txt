@@ -1,0 +1,530 @@
+##############################################################################
+# General settings.
+##############################################################################
+
+# Print statistics about the processed code.
+-verbose
+
+# We can speed up test builds by reducing the number of optimization passes.
+#-optimizationpasses 1
+
+# For testing, we can disable the individual processing steps.
+#-dontshrink
+#-dontobfuscate
+#-dontoptimize
+
+# You can also check if the problem can be solved by keeping additional
+# code or resources:
+#
+#-keep class * { *; }
+#-keepattributes *
+#
+#-keepresources **
+#-keepresourcefiles **
+#-keepresourcexmlattributenames **
+
+# These are really crude settings that you shouldn't use for building
+# actual releases, but it's easier to start from a working configuration,
+# which you can then refine.
+
+# DexGuard can create multidex apps if necessary.
+-multidex
+
+# Class Encryption
+
+##############################################################################
+# Additional obfuscation and encryption.
+##############################################################################
+
+# Encrypt some sensitive classes.
+-encryptclasses com.android.vending.billingOld.SubscriptionManager
+-encryptclasses com.jio.media.jiobeats.utils.SecurityHelper
+
+# Encrypt some sensitive strings.
+-encryptstrings class com.jio.media.jiobeats.DRMManager {
+    private static final java.lang.String secKey;
+}
+
+-encryptstrings class com.jio.media.jiobeats.utils.Utils {
+    private static final java.lang.String urlDecKey;
+    private static final java.lang.String DEVICE_ID_ENCRYPTION_KEY;
+}
+
+# String Encryption On Methods
+-encryptstrings class com.jio.media.jiobeats.utils.Utils{
+    public static java.lang.String decrypt(java.lang.String);
+    public static boolean needToShowStartupUpgradeScreen(android.content.Context);
+    public static java.lang.String decrypt(java.lang.String);
+}
+
+-encryptstrings class com.jio.media.jiobeats.utils.SecurityHelper{
+     public void checkTampers();
+}
+
+
+#-encryptstrings class com.jio.media.jiobeats.utils.SecurityHelper{
+#    public int getPubicHash();
+#}
+
+# Obfuscate the instructions of some sensitive methods.
+# High code obfuscation adds some runtime overhead, so best check the
+# performance on target devices.
+-obfuscatecode,high class com.jio.media.jiobeats.DRMManager
+
+
+##############################################################################
+# Remove logging code (if optimization is enabled, so not in debug builds).
+##############################################################################
+
+# Android logging.
+-assumenosideeffects class android.util.Log {
+    public static boolean isLoggable(java.lang.String, int);
+    public static int v(...);
+    public static int i(...);
+    public static int w(...);
+    public static int d(...);
+    public static int e(...);
+    public static java.lang.String
+                    getStackTraceString(java.lang.Throwable);
+}
+
+# Ordinary stack traces.
+-assumenosideeffects class java.lang.Exception {
+    public void printStackTrace();
+}
+
+
+##############################################################################
+# Keep classes, fields, methods, resources, asset files, and native libraries
+# that are accessed by reflection. Necessary to avoid breaking the app.
+##############################################################################
+
+# These settings can probably be refined.
+
+-keepresourcefiles lib/*/libcomScore.so
+-keepresourcefiles lib/*/libndkdrm.so
+
+
+##############################################################################
+################## BEGIN MADME ######################
+-keepnames class com.madme.** { *; }
+-dontwarn com.madme.**
+-keepdirectories com/madme/mobile/configuration
+-keepdirectories db/migration
+
+-keepresourcefiles assets/SurveyFontBold.ttf
+-keepresourcefiles assets/SurveyFontNormal.ttf
+-keepresources id/madme*
+-keepresources bool/madme*
+-keepresources integer/madme*
+-keepresources layout/madme*
+-keepresources menu/madme*
+-keepresources string/madme*
+-keepresources style/Madme*
+-keepresources style/madme*
+-keepresources drawable/madme*
+-keepresources id/ad_view_footer
+-keepresources attr/ael_defaultChildIndex
+-keepresources attr/ael_defaultPosition
+-keepresources attr/ael_duration
+-keepresources attr/ael_expanded
+-keepresources attr/ael_interpolator
+-keepresources attr/ael_orientation
+-keepresources id/accelerate
+-keepresources id/accelerateDecelerate
+-keepresources id/account_status
+-keepresources id/activity_main
+-keepresources id/ad_action_button
+-keepresources id/ad_madme_icon
+-keepresources id/ad_view_controls
+-keepresources id/ad_view_footer
+-keepresources id/ad_view_header
+-keepresources id/ads_carousel
+-keepresources id/anticipate
+-keepresources id/anticipateOvershoot
+-keepresources id/app_uuid_debug
+-keepresources id/background_back
+-keepresources id/background_next
+-keepresources id/big_picture
+-keepresources id/bottom_navigation
+-keepresources id/bounce
+-keepresources id/btn_allow
+-keepresources id/btn_deny
+-keepresources id/buttons_container
+-keepresources id/cancel_ad
+-keepresources id/cancel_survey
+-keepresources id/chevron_back
+-keepresources id/chevron_next
+-keepresources id/cities
+-keepresources id/container
+-keepresources id/count_ads
+-keepresources id/count_deferred_ads
+-keepresources id/debug_ad_type
+-keepresources id/debug_button_display_ad
+-keepresources id/debug_button_geofence
+-keepresources id/debug_call_direction
+-keepresources id/debug_campaig_type
+-keepresources id/debug_campaign_id
+-keepresources id/debug_country_code
+-keepresources id/debug_destination_numbers
+-keepresources id/debug_display_format
+-keepresources id/debug_host_app_inactive_days
+-keepresources id/debug_last_seen
+-keepresources id/debug_min_call_duration
+-keepresources id/debug_network_code_match
+-keepresources id/debug_network_name_match
+-keepresources id/debug_offer_text
+-keepresources id/debug_overlay
+-keepresources id/debug_package_name
+-keepresources id/debug_phone_number_match
+-keepresources id/debug_roaming_status
+-keepresources id/debug_sms_activation
+-keepresources id/debug_sms_activation_number
+-keepresources id/debug_sms_activation_text
+-keepresources id/debug_sms_body
+-keepresources id/debug_sms_keyword
+-keepresources id/debug_sms_short_code_match
+-keepresources id/debug_trigger_type
+-keepresources id/debug_triggers_list
+-keepresources id/debug_viewed_today
+-keepresources id/debug_wifi_ssid_match
+-keepresources id/decelerate
+-keepresources id/deferred_ads_ids
+-keepresources id/device_app_id_debug
+-keepresources id/device_client_ver_debug
+-keepresources id/device_config_string
+-keepresources id/device_config_ver_debug
+-keepresources id/device_info_brand_debug
+-keepresources id/device_info_model_debug
+-keepresources id/device_os_ver_debug
+-keepresources id/device_screen_info_debug
+-keepresources id/device_sdk_ver_debug
+-keepresources id/dymamic_conatainer
+-keepresources id/end_point
+-keepresources id/enter_postcode
+-keepresources id/enter_postcode_label
+-keepresources id/expand_more
+-keepresources id/expandableLayout
+-keepresources id/fastOutLinearIn
+-keepresources id/fastOutSlowIn
+-keepresources id/favourite_button
+-keepresources id/fragment_demographic_container
+-keepresources id/fragment_interests_container
+-keepresources id/fragment_location_container
+-keepresources id/horizontal
+-keepresources id/icon_chevron
+-keepresources id/img_ad
+-keepresources id/interests_bar
+-keepresources id/label
+-keepresources id/linear
+-keepresources id/linearOutSlowIn
+-keepresources id/logo
+-keepresources id/logo_gallery_container
+-keepresources id/main_container
+-keepresources id/menu
+-keepresources id/menu_container
+-keepresources id/msisdn
+-keepresources id/mute
+-keepresources id/opt_out_checkbox
+-keepresources id/opt_out_terms_link
+-keepresources id/opt_out_textview
+-keepresources id/overshoot
+-keepresources id/postpone_ad
+-keepresources id/progress_bar
+-keepresources id/ratingbutton_0
+-keepresources id/ratingbutton_1
+-keepresources id/ratingbutton_2
+-keepresources id/ratingbutton_3
+-keepresources id/ratingbutton_4
+-keepresources id/row
+-keepresources id/scroll
+-keepresources id/select_state_group
+-keepresources id/select_state_label
+-keepresources id/sign_in_button
+-keepresources id/skip
+-keepresources id/spinnerText
+-keepresources id/sso_token
+-keepresources id/states
+-keepresources id/status_bar_latest_event_content
+-keepresources id/subscriber_id
+-keepresources id/subscriber_id_debug
+-keepresources id/subscriber_uuid_debug
+-keepresources id/time_display
+-keepresources id/toast_layout_root
+-keepresources id/tv_interests
+-keepresources id/txt_description
+-keepresources id/unsubscribe_holder
+-keepresources id/vendor_logo
+-keepresources id/vertical
+-keepresources id/video_ad
+-keepresources id/video_ad_parent
+-keepresources id/web_ad
+-keepresources id/web_view
+-keepresources integer/boot_receiver_priority
+-keepresources menu/madme_debug_activity_menu_main
+-keepresources string/client_upgrade_available_dialog_message
+-keepresources string/client_upgrade_available_dialog_title
+-keepresources string/madem_info_active_offers_desc
+-keepresources style/madme_feature_application_header_visibility_style
+-keepresources styleable/ViewStubCompat_android_layout
+-keepresources styleable/expandableLayout_ael_defaultChildIndex
+-keepresources styleable/expandableLayout_ael_defaultPosition
+-keepresources styleable/expandableLayout_ael_duration
+-keepresources styleable/expandableLayout_ael_expanded
+-keepresources styleable/expandableLayout_ael_interpolator
+-keepresources styleable/expandableLayout_ael_orientation
+-keepresources xml/madme_file_paths
+-keepresources styleable/expandableLayout
+
+-keepresources id/FUNCTION
+-keepresources id/META
+-keepresources id/SHIFT
+-keepresources id/account_status
+-keepresources id/action_bar
+-keepresources id/action_bar_activity_content
+-keepresources id/action_bar_container
+-keepresources id/action_bar_root
+-keepresources id/action_bar_spinner
+-keepresources id/action_bar_subtitle
+-keepresources id/action_bar_title
+-keepresources id/action_container
+-keepresources id/action_context_bar
+-keepresources id/action_divider
+-keepresources id/action_image
+-keepresources id/action_menu_divider
+-keepresources id/action_menu_presenter
+-keepresources id/action_mode_bar
+-keepresources id/action_mode_bar_stub
+-keepresources id/action_mode_close_button
+-keepresources id/action_text
+-keepresources id/actions
+-keepresources id/ad_view_header
+-keepresources id/add
+-keepresources id/adjust_height
+-keepresources id/ads_carousel
+-keepresources id/alertTitle
+-keepresources id/all
+-keepresources id/app_uuid_debug
+-keepresources id/async
+-keepresources id/background_next
+-keepresources id/big_picture
+-keepresources id/blocking
+-keepresources id/btn_deny
+-keepresources id/cancel_survey
+-keepresources id/center
+-keepresources id/center_horizontal
+-keepresources id/center_vertical
+-keepresources id/chevron_next
+-keepresources id/cities
+-keepresources id/clip_horizontal
+-keepresources id/clip_vertical
+-keepresources id/container
+-keepresources id/count_deferred_ads
+-keepresources id/custom
+-keepresources id/customPanel
+-keepresources id/decelerate
+-keepresources id/decor_content_parent
+-keepresources id/device_sdk_ver_debug
+-keepresources id/dymamic_conatainer
+-keepresources id/edit_query
+-keepresources id/enter_postcode_label
+-keepresources id/expandableLayout
+-keepresources id/favourite_button
+-keepresources id/fill
+-keepresources id/fill_horizontal
+-keepresources id/fill_vertical
+-keepresources id/fragment_location_container
+-keepresources id/home
+-keepresources id/horizontal
+-keepresources id/icon_chevron
+-keepresources id/icon_group
+-keepresources id/icon_only
+-keepresources id/ifRoom
+-keepresources id/img_ad
+-keepresources id/interests_bar
+-keepresources id/label
+-keepresources id/left
+-keepresources id/light
+-keepresources id/line1
+-keepresources id/linearOutSlowIn
+-keepresources id/listMode
+-keepresources id/menu_container
+-keepresources id/message
+-keepresources id/msisdn
+-keepresources id/mute
+-keepresources id/never
+-keepresources id/none
+-keepresources id/normal
+-keepresources id/notification_background
+-keepresources id/notification_main_column
+-keepresources id/overshoot
+-keepresources id/progress_bar
+-keepresources id/progress_circular
+-keepresources id/progress_horizontal
+-keepresources id/ratingbutton_0
+-keepresources id/right
+-keepresources id/right_icon
+-keepresources id/row
+-keepresources id/scroll
+-keepresources id/scrollIndicatorDown
+-keepresources id/scrollIndicatorUp
+-keepresources id/scrollView
+-keepresources id/search_badge
+-keepresources id/search_bar
+-keepresources id/search_button
+-keepresources id/search_close_btn
+-keepresources id/search_edit_frame
+-keepresources id/search_go_btn
+-keepresources id/search_mag_icon
+-keepresources id/search_plate
+-keepresources id/search_src_text
+-keepresources id/search_voice_btn
+-keepresources id/select_state_label
+-keepresources id/shortcut
+-keepresources id/showCustom
+-keepresources id/showHome
+-keepresources id/skip
+-keepresources id/spinnerText
+-keepresources id/split_action_bar
+-keepresources id/src_atop
+-keepresources id/src_in
+-keepresources id/sso_token
+-keepresources id/standard
+-keepresources id/status_bar_latest_event_content
+-keepresources id/submenuarrow
+-keepresources id/subscriber_uuid_debug
+
+##################  END MADME ######################
+##############################################################################
+
+# Parse.
+-keepnames class com.parse.* { *; }
+-dontwarn com.parse.**
+
+# Comscore.
+-keep class com.comscore.** { *; }
+-dontwarn com.comscore.**
+
+# Inmobi.
+-keepnames class com.inmobi.** { *; }
+-dontwarn com.inmobi.**
+
+# Picasso - For Inmobi Needs.
+-keepnames class com.squareup.picasso.** {*;}
+-dontwarn com.squareup.picasso.**
+-dontwarn com.squareup.okhttp.**
+
+# Moat.
+-keepnames class com.moat.** { *; }
+#-dontwarn com.moat.**
+
+# MobileAppTracker.
+-keepnames public class com.mobileapptracker.** { public *; }
+
+# Cast
+-keepnames class com.jio.media.jiobeats.CastOptionsProvider { *; }
+
+# Saavn Cookies(Serializable Objects)
+-keepnames class com.jio.media.jiobeats.SerializableCookieNew
+-keepclassmembers class com.jio.media.jiobeats.SerializableCookieNew {
+    static final long serialVersionUID;#
+    !static !transient <fields>;
+}
+
+# Exo player
+-keepnames class com.google.android.exoplayer2.** {*;}
+
+# for google play store billing
+-keep class com.android.vending.billing.**
+
+# ima video ad
+-keepnames class com.google.ads.interactivemedia.** { *; }
+-keepnames interface com.google.ads.interactivemedia.** { *; }
+
+# Mobfox
+-keepnames class com.mobfox.** { *; }
+-keepnames class com.mobfox.adapter.** {*;}
+-keepnames class com.mobfox.sdk.** {*;}
+
+# Android auto
+-keepresourcexmlelements 'manifest/**/meta-data@name=com.google.android.gms.car.**'
+
+# Fortumo
+#-keep class mp.** { *; }
+
+# For CleverTap SDK
+-dontwarn com.clevertap.android.sdk.**
+
+# AppsFlyer
+-dontwarn com.appsflyer.**
+-keepnames public class com.google.android.gms.iid.InstanceID {
+    public *;
+}
+
+#AndroidX
+-keepnames class androidx.appcompat.app.AppCompatViewInflater
+-dontwarn com.google.android.material.**
+-keep class com.google.android.material.** { *; }
+
+-dontwarn androidx.**
+-keep class androidx.** { *; }
+-keep interface androidx.** { *; }
+
+-dontwarn android.support.v4.**
+-keep class android.support.v4.** { *; }
+
+-dontwarn android.support.v7.**
+-keep class android.support.v7.** { *; }
+
+#Fabric
+-keep class io.fabric.sdk.android.** { *; }
+-keep class com.facebook.FacebookSdk
+-keep class com.crashlytics.** { *; }
+-keep class io.fabric.sdk.android.Kit
+
+-keep public class com.jio.media.jiobeats.utils.** {
+  public protected *;
+}
+
+##############################################################################
+# BELOW ARE ALL COMMENTED!
+# The following should already be covered by DexGuard's default configuration.
+##############################################################################
+
+# Facebook.
+-keepnames class com.facebook.** { *; }
+
+# Facebook adapter.
+#-keep public class com.google.ads.** {*;}
+#-dontwarn com.google.ads.mediation.facebook.FacebookAdapter
+
+# Android support library.
+# Allow obfuscation of android.support.v7.internal.view.menu.**
+# to avoid problem on Samsung 4.2.2 devices with appcompat v21
+# see https://code.google.com/p/android/issues/detail?id=78377
+#-keep class !android.support.v7.internal.view.menu.**,android.support.** {*;}
+#-dontwarn android.support.v7.**
+
+# Change from above one:  android.support.v7.internal.view.* is changed to android.support.v7.view.* from v23
+-keep class !android.support.v7.view.menu.*MenuBuilder*, android.support.v7.** { *; }
+-keep interface android.support.v7.* { *; }
+
+# Google Play Services.
+#-keep class com.google.android.gms.common.api.GoogleApiClient { public *; }
+#-keep class com.google.android.gms.common.api.GoogleApiClient$* {public *;}
+#-keep class com.google.android.gms.location.LocationServices {public *;}
+#-keep class com.google.android.gms.location.FusedLocationProviderApi {public *;}
+#-keep class com.google.android.gms.location.ActivityRecognition {public *;}
+#-keep class com.google.android.gms.location.ActivityRecognitionApi {public *;}
+#-keep class com.google.android.gms.location.ActivityRecognitionResult {public *;}
+#-keep class com.google.android.gms.location.DetectedActivity {public *;}
+#-keep class com.google.android.gms.ads.identifier.AdvertisingIdClient{public *;}
+#-keep class com.google.android.gms.ads.identifier.AdvertisingIdClient$Info{public *;}
+
+-renamesourcefileattribute Saavn
+-keepattributes SourceFile,LineNumberTable
+#For Fabric
+-keepattributes *Annotation*
+-keepresourcexmlelements manifest/application/meta-data@name=io.fabric.ApiKey
+
+

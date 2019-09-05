@@ -1,0 +1,71 @@
+// Top-level build file where you can add configuration options common to all sub-projects/modules.
+
+buildscript {
+    repositories {
+        google()
+        maven {
+            url "http://storage.googleapis.com/r8-releases/raw/master"
+        }
+        flatDir { dirs 'dexguard/lib' } // For the DexGuard plugin.
+
+        maven { url 'https://maven.fabric.io/public' }
+
+        maven {
+            url 'https://maven.google.com/'
+            name 'Google'
+        }
+
+        jcenter {
+            url "http://jcenter.bintray.com/"
+        }
+    }
+    dependencies {
+        classpath 'com.android.tools.build:gradle:3.4.2'
+        classpath 'com.android.tools.build.jetifier:jetifier-processor:1.0.0-beta06'
+        classpath ':dexguard:'
+
+        classpath 'io.fabric.tools:gradle:1.+'
+        //classpath 'io.fabric.tools:gradle:1.4.6'
+
+        //uncomment code once we add google-service.json for FCM
+        classpath 'com.google.gms:google-services:4.3.1' //
+        // NOTE: Do not place your application dependencies here; they belong
+        // in the individual module build.gradle files
+    }
+}
+
+allprojects {
+    repositories {
+        google()
+        maven {
+            url "https://jitpack.io"
+        }
+
+        flatDir{
+            dirs 'libs'
+        }
+        maven { url "https://oss.sonatype.org/content/repositories/snapshots" }
+
+        maven {
+            url 'https://maven.google.com/'
+            name 'Google'
+        }
+        maven {
+            credentials {
+                username = "reliance"
+                password = "V2iWk89x"         }
+            url "https://fridge.lab.mad-me.com/artifactory/public-release-local"
+        }
+
+        maven { url "https://storage.googleapis.com/snap-kit-build/maven" }
+
+        jcenter {
+            url "http://jcenter.bintray.com/"
+        }
+
+    }
+}
+
+task clean(type: Delete) {
+    delete rootProject.buildDir
+}
